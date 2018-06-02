@@ -19,8 +19,8 @@ public class basebay {
 	     File fs=new File(f, "eBay.apk");
 	     DesiredCapabilities cap=new DesiredCapabilities();
 	     
-//cap.setCapability(MobileCapabilityType.DEVICE_NAME, "Galaxy S6");
-cap.setCapability(MobileCapabilityType.DEVICE_NAME, "demo2");
+cap.setCapability(MobileCapabilityType.DEVICE_NAME, "Galaxy S6");
+//cap.setCapability(MobileCapabilityType.DEVICE_NAME, "demo2");
 cap.setCapability(MobileCapabilityType.APP, fs.getAbsolutePath());
 driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

@@ -11,7 +11,7 @@ import io.appium.java_client.android.AndroidElement;
 
 public class Login extends basebay {
 
-	public static void main(String[] args) throws MalformedURLException {
+	public static void main(String[] args) throws MalformedURLException, InterruptedException {
 
 		AndroidDriver<AndroidElement> driver=capabilities();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -31,45 +31,42 @@ public class Login extends basebay {
 		//driver.findElementsByClassName("android.widget.TextView").get(0).click();
 		driver.findElementByXPath("//android.widget.TextView[@text='65 inch led tv']").click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		
-		
-		
-		
-		TouchAction ta =new TouchAction(driver );
-		//Duration r=Duration.ofSeconds(60);
-		Dimension size = driver.manage().window().getSize();
-		int x = size.getWidth()/2;
-		int starty =(int)(size.getHeight()*0.80);
-		int endy =(int)(size.getHeight()*-0.50);
-		ta.press(x,starty).moveTo(x,endy).release().perform();
-		
-		
-		
-		
-		
-		
-		/*driver.findElementsByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"SAMSUNG 65 INCHES 65MU6100 4K UHD LED TV 2017 MODEL + 1 YEAR DEALERS WARRANTY\"))");
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);*/
+
+		driver.findElementsByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"SAMSUNG 49 INCHES 49MU6100 4K UHD LED TV 2017 MODEL WITH 1 YEAR DEALER WARRANTY!\"))");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 		
 		
 		//driver.findElementByXPath("//android.widget.TextView[@text='SONY 65 INCHES 65X7000E 4k UHD HDR SMART LED TV + ONE YEAR DEALER'S WARRANTY']").click();
 		//driver.("android.view.View").get(1).click();
-		driver.findElementByAndroidUIAutomator("text(\"SONY 65 INCHES 65X7000E 4k UHD HDR SMART LED TV + ONE YEAR DEALER'S WARRANTY\")").click();
+		driver.findElementByAndroidUIAutomator("text(\"SAMSUNG 49 INCHES 49MU6100 4K UHD LED TV 2017 MODEL WITH 1 YEAR DEALER WARRANTY!\")").click();
 		
 		driver.findElementsByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"ITEM DESCRIPTION\"))");
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElementByAndroidUIAutomator("text(\"ITEM DESCRIPTION\")").click();
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		
+		Thread.sleep(10000);
 		driver.findElementById("com.ebay.mobile:id/home").click();
-		//driver.navigate().back();
-		
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		
 		
+		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		Thread.sleep(5000);
+				
+		TouchAction sc = new TouchAction(driver);
+		//Duration r=Duration.ofSeconds(30);
+		//ts.press(207, 582).moveTo(8, -360).release().perform();
+		sc.press(1260, 1545).moveTo(23,741).release().perform();
 		
 		
+        /*TouchAction sr =new TouchAction(driver );
 		
+		Dimension size= driver.manage().window().getSize();
+		int x = size.getWidth()/2;
+        int starty =(int)(size.getHeight()*-0.160);
+		int endy =(int)(size.getHeight()* -0.80); 
+		sr.press(x, starty).moveTo(x, endy).release().perform();*/
+
 		/*Dimension dim= driver.manage().window().getSize();
 		//int height = dim.getHeight();
 		int width = dim.getWidth();
@@ -83,11 +80,11 @@ public class Login extends basebay {
 		
 		//driver.findElementByXPath("//android.widget.TextView[@text='BUY IT NOW']").click();
 		
-		driver.findElementByName("REVIEW").click();
+		driver.findElementById("com.ebay.mobile:id/take_action").click();
 		
 	
-	
-	
+		driver.findElementsByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Proceed to Pay\"))");
+		driver.findElementByAndroidUIAutomator("text(\"Proceed to Pay\")").click();
 	
 	
 	

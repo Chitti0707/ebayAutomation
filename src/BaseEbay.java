@@ -19,7 +19,7 @@ public class BaseEbay {
 	     
 		
 DesiredCapabilities cap=new DesiredCapabilities();
-cap.setCapability(MobileCapabilityType.DEVICE_NAME, "demo1");
+cap.setCapability(MobileCapabilityType.DEVICE_NAME, "demo2");
 //cap.setCapability(MobileCapabilityType.DEVICE_NAME, "Galaxy Grand2");
 cap.setCapability(MobileCapabilityType.APP, fs.getAbsolutePath());
 AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
