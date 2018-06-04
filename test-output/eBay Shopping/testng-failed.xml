@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [eBay Shopping]">
+  <test thread-count="5" name="Online Shopping(failed)">
+    <classes>
+      <class name="test.ebay.Login">
+        <methods>
+          <include name="Addtocart"/>
+          <include name="Login"/>
+          <include name="LaunchApp"/>
+          <include name="Search"/>
+        </methods>
+      </class> <!-- test.ebay.Login -->
+    </classes>
+  </test> <!-- Online Shopping(failed) -->
+</suite> <!-- Failed suite [eBay Shopping] -->
